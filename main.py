@@ -22,6 +22,8 @@ class Queue:
         self.linkedList=LinkedList()
         
     def __str__(self):
+        if self.linkedList.head==self.linkedList.tail==None:
+            return "There are no elements in the queue"
         values=[str(x) for x in self.linkedList]
         return ' '.join(values)
     
@@ -51,12 +53,15 @@ class Queue:
         if self.linkedList.head is None:
             return "There are no elements in the queue"
         return self.linkedList.head
+    
+    def delete(self):
+        self.linkedList.head=self.linkedList.tail=None
         
     
 customQueue=Queue()
-print(customQueue.peek())
-print(customQueue.enqueue(10))
-print(customQueue.enqueue(11))
-print(customQueue.enqueue(12))
+customQueue.enqueue(11)
+customQueue.enqueue(12)
+customQueue.enqueue(13)
 print(customQueue)
-print(customQueue.peek())
+customQueue.delete()
+print(customQueue)
