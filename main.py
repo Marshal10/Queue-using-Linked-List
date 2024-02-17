@@ -46,17 +46,17 @@ class Queue:
         else:
             self.linkedList.head=self.linkedList.head.next
         return popped_node
+    
+    def peek(self):
+        if self.linkedList.head is None:
+            return "There are no elements in the queue"
+        return self.linkedList.head
         
     
 customQueue=Queue()
+print(customQueue.peek())
 print(customQueue.enqueue(10))
 print(customQueue.enqueue(11))
 print(customQueue.enqueue(12))
 print(customQueue)
-print(customQueue.dequeue())
-print(customQueue)
-print(customQueue.dequeue())
-print(customQueue)
-print(customQueue.dequeue())
-print(customQueue)
-print(customQueue.isEmpty())
+print(customQueue.peek())
