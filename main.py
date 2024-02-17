@@ -33,11 +33,18 @@ class Queue:
             self.linkedList.tail.next=newNode
             self.linkedList.tail=newNode
         return "Succesfully added element to the queue"
+    
+    def isEmpty(self):
+        if self.linkedList.head is None:
+            return True
+        return False
         
     
 customQueue=Queue()
 print(customQueue)
+print(customQueue.isEmpty())
 print(customQueue.enqueue(10))
 print(customQueue.enqueue(11))
 print(customQueue.enqueue(12))
+print(customQueue.isEmpty())
 print(customQueue)
